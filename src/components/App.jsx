@@ -19,24 +19,14 @@ export class App extends Component {
     const newContact = {
       ...data, 
       id: nanoid()
+      }  
+      const nameCheck = this.state.contacts.find(({name})=> name === data.name)
+      if(nameCheck){
+        return alert(`${data.name} is already in contacts`)
       }
-
-    const updatedContact = this.state.contacts.filter(
-      (contact) => contact.name === data.name
-      );
-
-      if(updatedContact){
-        this.state.contacts.map((item) => {
-          if(item.name === data.name){
-            return alert(`${data.name} is already in contacts`)
-          }
-          return item
-        })
-        
-        this.setState((prevState) => ({
+      this.setState((prevState) => ({
         contacts :[...prevState.contacts,(newContact)]}
-      ))    
-}
+      )) 
   }
   handleFind = ({ target }) => {
     const normalizedValue = target.value.trim().toLocaleLowerCase()
