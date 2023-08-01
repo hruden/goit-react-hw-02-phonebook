@@ -14,7 +14,7 @@ export const Filter =({filter, handleFind})=>{
     )
 }
 
-Filter.prototype = {
-    filter: PropTypes.string,
+Filter.propTypes = {
+    filter: PropTypes.string.isRequired,
     handleFind: PropTypes.func,
 }

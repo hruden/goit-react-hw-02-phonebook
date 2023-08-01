@@ -14,12 +14,13 @@ export const ContactList = ({contacts, removeContact}) => {
     )
 }
 
-ContactList.prototype = {
+ContactList.propTypes = {
     contacts: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,
             name: PropTypes.string,
             number: PropTypes.number,
         })
-    )
+    ),
+    removeContact: PropTypes.func
 }

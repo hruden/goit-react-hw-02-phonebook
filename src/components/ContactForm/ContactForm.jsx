@@ -1,5 +1,7 @@
 import { Component } from 'react';
 import { AddContactBtn, FormFoneBook, InputFoneBook } from './ContactForm.styled';
+import PropTypes from 'prop-types';
+
 
 export class ContactForm extends Component {
   state = {
@@ -46,4 +48,8 @@ export class ContactForm extends Component {
       </FormFoneBook>
     );
   }
+}
+
+ContactForm.propTypes = {
+  createContact: PropTypes.func
 }

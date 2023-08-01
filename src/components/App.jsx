@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
-import { Containet } from './App.styled';
+import { Container } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -45,7 +45,7 @@ export class App extends Component {
   };
   render() {
     return (
-      <Containet>
+      <Container>
         <h1>Phonebook</h1>
         <ContactForm createContact={this.createContact}/>
 
@@ -53,7 +53,7 @@ export class App extends Component {
         <Filter filter={this.state.filter} handleFind={this.handleFind}/>
         {this.findContact().length ? (<ContactList contacts={this.findContact()} removeContact={this.removeContact}/>
         ):(<p>No matches found!</p>)} 
-      </Containet>
+      </Container>
     );
   }
 }
